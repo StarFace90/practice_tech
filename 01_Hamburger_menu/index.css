@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #e3f2fd;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  width: 90px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s linear;
+
+  /* container 영역 벗어나는 순간 hidden */
+  overflow: hidden;
+}
+
+.container .menu {
+  position: relative;
+  height: 100%;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 햄버거 라인 */
+
+/* 라인 2 */
+.menu .line {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #2c3e52;
+
+  /* 클릭시 이벤트 속도 조절 */
+  transition: all 0.4s linear;
+}
+
+/* 라인 1 */
+.menu .line.one {
+  top: 15px;
+}
+
+/* 라인 3 */
+.menu .line.three {
+  bottom: 15px;
+}
+
+.container.active {
+  background-color: #2c3e52;
+}
+
+.container.active .line.one {
+  top: 50%;
+  /* 라인 1의 클릭시 이동 이벤트 */
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #fff;
+}
+
+.container.active .line.two {
+  left: -100%;
+  /* 라인 2의 클릭시 이동 이벤트 */
+  transform: translateY(-50%) rotate(45deg);
+  /* 라인 날아가면서 사라지게 */
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.container.active .line.line.three {
+  bottom: 50%;
+  /* 라인 3의 클릭시 이동 이벤트 */
+  /* x자 교차를 위해 라인 1과 반대로 위치 설정 */
+  transform: translateY(50%) rotate(-45deg);
+  background-color: #fff;
+}
+
+.menu .line.two {
+  left: 0;
+  opacity: 1;
+}
