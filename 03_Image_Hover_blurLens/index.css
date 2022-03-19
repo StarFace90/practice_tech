@@ -11,19 +11,20 @@ body {
 
 #img,
 #layer {
-  width: 660px;
-  height: 448px;
+  width: 860px;
+  height: 548px;
   border: 3px solid #000;
   position: absolute;
   left: 50%;
-  top: 5%;
-  transform: translate(-50%, 43%);
+  top: 50%;
+  transform: translate(-50%, -43%);
+  cursor: pointer;
 }
 
 #img {
   background-image: url(./cat.jpeg);
   background-repeat: no-repeat;
-  background-size: 660px 448px;
+  background-size: cover;
   filter: blur(2.5px);
 }
 
@@ -35,7 +36,7 @@ body {
   height: 200px;
   border: 3px solid #000;
   border-radius: 50%;
-  transform: translate(-50%, 43%);
+  transform: translate(-50%, 50%);
   background-image: url(./cat.jpeg);
   background-repeat: no-repeat;
   background-size: 660px 448px;
